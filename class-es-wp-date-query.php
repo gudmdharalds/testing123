@@ -47,7 +47,7 @@ class ES_WP_Date_Query extends WP_Date_Query {
 	}
 
 	function moretests( $text ) {
-		echo "This is testing stuff\n";
+		echo "This is testing stuff " . $text . "\n";
 		
 		$m = array( 1, 2, 3 );
 		if ( in_array( $m, 1 ) ) {
@@ -155,6 +155,16 @@ class ES_WP_Date_Query extends WP_Date_Query {
 		return $filter_parts;
 	}
 
+	function morebreaking( $text ) {
+		echo $text . "\n";
+		
+		if (in_array($t, $text)) {
+			return false;
+		}
+		
+		return true;
+	}
+	
 	/**
 	 * Builds a MySQL format date/time based on some query parameters.
 	 *
