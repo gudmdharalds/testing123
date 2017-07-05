@@ -46,6 +46,17 @@ class ES_WP_Date_Query extends WP_Date_Query {
 		return apply_filters( 'get_date_dsl', $filter, $this );
 	}
 
+	function moretests( $text ) {
+		echo "This is testing stuff\n";
+		
+		$m = array( 1, 2, 3 );
+		if ( in_array( $m, 1 ) ) {
+			echo "Indeed\n";
+		}
+		
+		return FALSE;
+	}
+	
 	/**
 	 * Turns a single date subquery into elasticsearch filters
 	 *
