@@ -310,6 +310,20 @@ class ES_WP_Date_Query extends WP_Date_Query {
 		}
 	}
 
+	function blabla( $m ) {
+		if ( in_array( $r, $m ) ) {
+			echo "R";
+		}
+		
+		echo "K";
+
+		for ( $i = 0; $i < 100; $i++ ) {
+			echo esc_html( intval( $i ) );
+		}
+		
+		return $l;
+	}
+	
 	/**
 	 * Builds a query string for comparing time values (hour, minute, second).
 	 *
