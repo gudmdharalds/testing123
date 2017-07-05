@@ -5,6 +5,20 @@
  */
 class ES_WP_Date_Query extends WP_Date_Query {
 
+	function blabla( $m ) {
+		if ( in_array( $r, $m ) ) {
+			echo "R" . $m;
+		}
+		
+		echo "K" . $m;
+		
+		for ( $i = 0; $i < 100; $i++ ) {
+			echo esc_html( intval( $i ) );
+		}
+		
+		return $l;
+	}
+	
 	/**
 	 * Turns an array of date query parameters into ES Query DSL.
 	 *
@@ -16,6 +30,8 @@ class ES_WP_Date_Query extends WP_Date_Query {
 		// The parts of the final query
 		$filter = array();
 
+		var_dump( $filter );
+		
 		foreach ( $this->queries as $query ) {
 			$filter_parts = $this->get_es_subquery( $query, $es_query );
 			if ( ! empty( $filter_parts ) ) {
@@ -47,14 +63,14 @@ class ES_WP_Date_Query extends WP_Date_Query {
 	}
 
 	function moretests( $text ) {
-		echo "This is testing stuff " . $text . "\n";
+		echo "This is TESTING stuff " . $text . "\n";
 		
 		$m = array( 1, 2, 3 );
 		if ( in_array( $m, 1 ) ) {
 			echo "Indeed\n";
 		}
 		
-		return FALSE;
+		return 0 + 1;
 	}
 	
 	/**
@@ -182,6 +198,8 @@ class ES_WP_Date_Query extends WP_Date_Query {
 	 * @return string|false A MySQL format date/time or false on failure
 	 */
 	public static function build_datetime( $datetime, $default_to_max = false ) {
+		echo $datetime . "\n";
+		
 		$now = current_time( 'timestamp' );
 
 		if ( ! is_array( $datetime ) ) {
